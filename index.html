@@ -3,7 +3,7 @@
     
     <meta http-equiv="x-ua-compatible" content="ie=edge">
 
-    <title>SANeRF-HQ</title>
+    <title>CVD-STORM</title>
 
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -48,49 +48,20 @@
                 </small> -->
             </h2>
         </div>
-        <div class="row" id="author-row" style="margin:0 auto;">
-            <div class="col-md-12 text-center" style="display: table; margin:0 auto">
-                <table class="author-table" id="author-table">
-                    <tr>
-                       <td>
-                            <a style="text-decoration:none">
-                              Tianrui Zhang
-                            </a>
-                            <br>The Hong Kong University of Science and Technology
-                        </td> 
-                        <td>
-                            <a style="text-decoration:none" >
-                              Yichen Liu
-                            </a>
-                            <br>SenseTime Research
-                        </td>
-                        <td>
-                            <a style="text-decoration:none">
-                              Zilin Guo
-                            </a>
-                            <br>The Hong Kong University of Science and Technology
-                        </td>
-                        <td>
-                            <a style="text-decoration:none" >
-                              Jingcheng Ni
-                            </a>
-                            <br>SenseTime Research
-                        </td>
-                        <td>
-                            <a style="text-decoration:none">
-                               Yuxin Guo
-                            </a>
-                            <br>SenseTime Research
-                        </td>
-                        <td>
-                            <a style="text-decoration:none" href="https://yuwingtai.github.io/">
-                                Yu-Wing Tai
-                            </a>
-                            <br>Dartmouth College
-                        </td>
-                    </tr>
-                </table>
-            </div>
+        <div class="is-size-4 publication-authors">
+              <span style="color: black;" class="author-block">Tianrui Zhang<sup>2</sup>,</span>
+              <span style="color: black;" class="author-block">Yichen Liu<sup>1</sup>,</span>
+              <span style="color: black;" class="author-block">Zilin Guo<sup>2</sup>,</span>
+              <span style="color: black;" class="author-block">Jingcheng Ni<sup>1</sup>,</span>
+              <span style="color: black;" class="author-block">Yuxin Guo<sup>1</sup>,</span>
+              <span style="color: black;" class="author-block">Chenjing Ding<sup>1</sup>,</span>
+              <span style="color: black;" class="author-block">Dan Xu<sup>2</sup>,</span>
+              <span style="color: black;" class="author-block">Lewei Lu<sup>1</sup>,</span>
+              <span style="color: black;" class="author-block">Zehuan Wu<sup>1</sup>,</span>
+        </div>
+        <div class="is-size-4 publication-authors">
+            <span class="author-block"><sup>1</sup>SenseTime Research</span>
+            <span class="author-block"><sup>2</sup>The Hong Kong University of Science and Technology</span>
         </div>
     </div>
     <script>
@@ -131,7 +102,7 @@
                             </a>
                         </li>                             -->
                         <li>
-                            <a href="https://github.com/lyclyc52/SANeRF-HQ" target="_blank">
+                            <a href="https://github.com/SenseTime-FVG/OpenDWM" target="_blank">
                             <image src="img/github.png" height="60px">
                                 <h4><strong>Code</strong></h4>
                             </a>
@@ -159,7 +130,7 @@
                     Abstract
                 </h3>
                 <p class="text-justify">
-                    Recently, the Segment Anything Model (SAM) has showcased remarkable capabilities of zero-shot segmentation, while  NeRF (Neural Radiance Fields) has gained popularity as a method for various 3D problems beyond novel view synthesis. Though there exist initial attempts to incorporate these two methods into 3D segmentation, they face the challenge of accurately and consistently segmenting objects in complex scenarios. In this paper, we introduce the Segment Anything for NeRF in High Quality (SANeRF-HQ) to achieve high quality 3D segmentation of any object in a given scene. SANeRF-HQ utilizes SAM for open-world object segmentation guided by user-supplied prompts, while leveraging NeRF to aggregate information from different viewpoints. To overcome the aforementioned challenges, we employ density field and RGB similarity to enhance the accuracy of segmentation boundary during the aggregation. Emphasizing on segmentation accuracy, we evaluate our method quantitatively on multiple NeRF datasets where high-quality ground-truths are available or manually annotated. SANeRF-HQ shows a significant quality improvement over previous state-of-the-art methods in NeRF object segmentation, provides higher flexibility for object localization, and enables more consistent object segmentation across multiple views.                
+                    Generative models have been widely applied to world modeling for environment simulation and future state prediction. With advancements in autonomous driving, there is a growing demand not only for high-fidelity video generation under various controls, but also for producing diverse and meaningful information such as depth estimation. To address this, we propose \ours, a cross-view video diffusion model utilizing a spatial-temporal reconstruction Variational Autoencoder (VAE) that generates long-term, multi-view videos with 4D reconstruction capabilities under various control inputs. Our approach first fine-tunes the VAE with an auxiliary 4D reconstruction task, enhancing its ability to encode 3D structures and temporal dynamics. Subsequently, we integrate this VAE into the video diffusion process to significantly improve generation quality. Experimental results demonstrate that our model achieves substantial improvements in both FID and FVD metrics. Additionally, the jointly-trained Gaussian Splatting Decoder effectively reconstructs dynamic scenes, providing valuable geometric information for comprehensive scene understanding.
                 </p>
             </div>
         </div>
@@ -259,43 +230,6 @@
                     <img src="./img/application.png" width="60%">
                 </div>
 			</div>
-        </div>
-
-        <div class="row">
-            <div class="col-md-8 col-md-offset-2">
-                <h3>
-                    Dynamic NeRF
-                </h3>
-                <div class="text-justify">
-                    We present a preliminary demonstration on the easy extension of our method to 4D dynamic NeRF representations:
-                </div>
-
-                <div style="overflow: hidden;">
-                    <video id="dynamic-nerf" width="100%" playsinline controls muted style="margin-top: -5%;">
-                        <source src="video/dynamic.mp4" type="video/mp4" />
-                    </video>
-                </div>
-
-                <!-- <div class="text-justify">
-                    We can also control the amounts of specular and diffuse colors, or change the diffuse color without affecting the specular reflections:
-                </div>
-                
-                <table width="100%">
-                    <tr>
-                        <td align="left" valign="top" width="50%">
-                            <video id="v2" width="100%" playsinline autoplay loop muted>
-                                <source src="video/car_color2.mp4" type="video/mp4" />
-                            </video>
-                        </td>
-                        <td align="left" valign="top" width="50%">
-                            <video id="v3" width="100%" playsinline autoplay loop muted>
-                                <source src="video/car_color3.mp4" type="video/mp4" />
-                            </video>
-                        </td>
-                    </tr>
-                </table> -->
-
-            </div>
         </div>
 
             
